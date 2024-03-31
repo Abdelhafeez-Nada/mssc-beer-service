@@ -14,8 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class BeerController {
 
+    // TODO: inject service
+
     @GetMapping("/{beerId}")
     public ResponseEntity<BeerDto> getBeerById(@PathVariable("beerId") UUID beerId) {
+        // TODO: use service
         return new ResponseEntity<BeerDto>(BeerDto.builder().id(beerId).build(), HttpStatus.OK);
     }
 
